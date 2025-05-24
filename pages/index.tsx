@@ -1,21 +1,20 @@
 import { useCounterStore } from '@/store/counter';
+import styles from "./index.module.css"
+
 
 export default function counter() {
   const { count, increase, decrease, reset } = useCounterStore();
 
   return (
-    <div style={{
-      backgroundColor: 'blue', display: 'flex', justifyContent: 'center',
-      alignItems: 'center', width: "100%", height: "100vh"
-    }}>
-      <main style={{ backgroundColor: 'gray', textAlign: 'center', padding: 10, width: "15rem" }}>
-        <h1 style={{ marginBottom: ".5rem" }}>Counter:</h1>
-        <h2 style={{ marginBottom: ".5rem" }}>{count}</h2>
+    <div className={styles.mainPage}>
+      <main className={styles.main}>
+        <h1 className={styles.counterTitle}>Counter:</h1>
+        <h2 className={styles.counter}>{count}</h2>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <button onClick={decrease} style={{ padding: ".2rem .4rem" }}>decrease</button>
-          <button onClick={reset} style={{ padding: ".2rem .4rem" }}>reset</button>
-          <button onClick={increase} style={{ padding: ".2rem .4rem" }} >increase</button>
+        <div className={styles.btnBox}>
+          <button onClick={decrease} className={styles.btn}>decrease</button>
+          <button onClick={reset} className={styles.btn}>reset</button>
+          <button onClick={increase} className={styles.btn} >increase</button>
         </div>
 
       </main>
